@@ -21,3 +21,5 @@ O **Prioris** é um gerenciador de tarefas intuitivo com foco em produtividade, 
 ![Screenshot do Projeto](https://github.com/bea-angelim/Prioris-app/raw/main/preview.png)
 
 link: https://bea-angelim.github.io/Prioris-app/
+
+Aplicativo ainda em construção
