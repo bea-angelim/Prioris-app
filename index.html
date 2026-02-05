@@ -35,6 +35,10 @@
         </aside>
 
         <main class="main">
+            <button id="menuToggle" class="menu-toggle">
+                <span class="material-icons">menu</span>
+            </button>
+
             <header class="main-header">
                 <div>
                     <h1>Olá, Usuário</h1>
@@ -42,7 +46,13 @@
                 </div>
 
                 <div class="project-creation-area">
-                    <input type="text" id="newProjectInput" placeholder="Nome do novo projeto..." maxlength="25">
+                    <input 
+                        type="text" 
+                        id="newProjectInput" 
+                        class="input-base"
+                        placeholder="Nome do novo projeto..." 
+                        maxlength="25"
+                    >
                     <button class="btn-action" id="createProjectBtn">
                         <span class="material-icons">add</span>
                         Criar Projeto
@@ -59,7 +69,11 @@
             </div>
 
             <div class="add-task">
-                <input type="text" id="taskInput" placeholder="Digite uma nova tarefa">
+                <input 
+                    type="text" 
+                    id="taskInput" 
+                    class="input-base"
+                    placeholder="Digite uma nova tarefa">
 
                 <div class="custom-select" id="customSelect">
                     <div class="select-trigger">

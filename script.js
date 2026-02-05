@@ -72,6 +72,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const titleTag = card.querySelector('h3');
             const editBtn = card.querySelector('.edit-proj');
 
+            let originalTitle = proj.name;
+
+            titleTag.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    editBtn.click();
+                }
+
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+
+                    titleTag.textContent = originalTitle;
+                    titleTag.setAttribute('contenteditable', 'false');
+                    editBtn.querySelector('.material-icons').textContent = 'edit';
+                }
+
+            });
+
             editBtn.onclick = (e) => {
                 e.stopPropagation();
                 const isEditing = titleTag.getAttribute('contenteditable') === 'true';
@@ -135,6 +153,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const checkbox = task.querySelector('input[type="checkbox"]');
         const taskText = task.querySelector('.task-text');
+
+        taskText.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                taskText.blur();
+            }
+        });
+
+        taskText.addEventListener('blur', () => {
+            const taskObj = tasks.find(t => t.id === id);
+            
+            if (taskObj) {
+                taskObj.text = taskText.textContent.trim();
+                saveAll();
+            }
+        })
         
         checkbox.onchange = () => {
             const taskObj = tasks.find(t => t.id === id);
@@ -259,6 +293,13 @@ document.addEventListener('DOMContentLoaded', () => {
             newProjectInput.value = '';
         }
     };
+
+    newProjectInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            createProjectBtn.click();
+        }
+    });
 
     trigger.onclick = (e) => {
         e.stopPropagation();

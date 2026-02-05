@@ -14,6 +14,42 @@ body {
     min-height: 100vh;
 }
 
+
+
+
+.input-base {
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 14px;
+    outline: none;
+    transition: background-color 0.15s ease, transform 0.2s ease;
+}
+
+.input-base:hover:not(:focus) {
+    background-color: #e8e8e8;
+    
+}
+
+.input-base:focus {
+    background-color: #f0f0f0; 
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.08);
+    outline: none;
+}
+
+.btn {
+    padding: 10px 16px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+
+
 .sidebar {
     width: 250px;
     background: #ffffff;
@@ -39,7 +75,7 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: #888; /* Cor neutra para itens inativos */
+    color: #888;
     font-size: 14px;
     font-weight: 600;
     padding: 12px 15px;
@@ -65,12 +101,218 @@ body {
     font-size: 20px;
 }
 
+
+
+
 .main {
     flex: 1;
     background: #fafafa;
     padding: 30px;
     overflow: hidden;
 }
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.main-header p {
+    color: #777;
+    font-size: 14px;
+}
+
+
+
+.project-creation-area {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#newProjectInput {
+    height: 40px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+#createProjectBtn {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 13px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#createProjectBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.projects-wrapper {
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.projects {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0 20px;
+    scroll-behavior: smooth;
+}
+
+.project-card {
+    flex: 0 0 280px;
+    padding: 20px;
+    border-radius: 18px;
+    color: white;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 6px;
+    caret-color: #fff;
+}
+
+.project-card p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.project-actions {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    gap: 10px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.project-card:hover .project-actions {
+    opacity: 1;
+}
+
+.proj-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.proj-btn .material-icons {
+    font-size: 18px;
+    color: white;
+}
+
+
+
+
+.add-task {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+#confirmAddTask {
+    padding: 0 20px;
+    height: 40px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 13px;
+    background: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+#confirmAddTask:hover {
+    transform: scale(1.05);
+}
+
+#confirmAddTask:active {
+    transform: scale(0.95);
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: white;
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.task-text {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.task-text.completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.task-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.edit-btn, 
+.delete-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn .material-icons, 
+.delete-btn .material-icons {
+    font-size: 20px;
+    color: #888;
+}
+
+
+
+
+.purple {
+    background: #6c4ab6;
+}
+
+.blue {
+    background: #6ec1c7;
+}
+
+.orange {
+    background: #ff8a5c;
+}
+
+
+
 
 .calendar-container {
     width: 100%;
@@ -180,6 +422,9 @@ body {
     font-size: 32px;
 }
 
+
+
+
 .upcoming-section {
     margin-top: 5px;
     width: 100%;
@@ -272,127 +517,6 @@ body {
     color: #333;
 }
 
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.main-header p {
-    color: #777;
-    font-size: 14px;
-}
-
-.btn {
-    padding: 10px 16px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.task {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-    padding: 12px 18px;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
-}
-
-#confirmAddTask {
-    padding: 12px 18px;
-    background: linear-gradient(180des, #1a1a1a, #0f0f0f);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-
-    box-shadow:
-        0 3px 6px rgba(0, 0, 0, 0.18),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-}
-
-#confirmAddTask:hover {
-    transform: scale(1.04);
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.25),
-        inset 0 1px 0 rgba(255, 255, 255, 0.08);
-}
-
-#confirmAddTask:active {
-    transform: scale(0.98);
-    box-shadow:
-        0 2px 5px rgba(0, 0, 0, 0.25),
-        inset 0 2px 4px rgba(0, 0, 0, 0.4);
-}
-
-.project-creation-area {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-#newProjectInput {
-    height: 40px;
-    padding: 0 15px;
-    border-radius: 12px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background-color: #f0f0f0;
-    font-weight: 600;
-    font-size: 13px;
-    outline: none;
-    transition: all 0.2s ease;
-}
-
-#newProjectInput:focus {
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.1);
-}
-
-#createProjectBtn {
-    height: 40px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0 20px;
-    background: #111;
-    color: white;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 13px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-}
-
-#createProjectBtn:hover {
-    transform: scale(1.05);
-    background: #222;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-#createProjectBtn:active {
-    transform: scale(0.95);
-}
-
-.projects-wrapper {
-    width: 100%;
-    overflow: hidden;
-    margin-bottom: 30px;
-    position: relative;
-}
-
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -441,38 +565,9 @@ body {
     text-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.projects {
-    display: flex;
-    gap: 20px;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    padding: 10px 0 20px 0;
-    align-items: flex-start;
-    cursor: default;
-}
+
 .projects::-webkit-scrollbar {
     display: none;
-}
-
-.project-card {
-    flex: 0 0 280px;
-    min-width: 140px;
-    padding: 20px;
-    border-radius: 18px;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-}
-
-.project-card h3 {
-    outline: none;
-    font-size: 18px;
-    margin-bottom: 6px;
 }
 
 .project-card h3[contenteditable="true"] {
@@ -481,45 +576,14 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 4px;
     padding: 2px 5px;
-}
-
-.project-card p {
-    font-size: 14px;
-    opacity: 0.6;
-}
-
-.project-actions {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    display: flex;
-    gap: 10px;
-    opacity: 0;
-    transition: opacity 0.2s;
-}
-
-.project-card:hover .project-actions {
-    opacity: 1;
-}
-
-.proj-btn {
-    background: none !important;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 0;
-    display: flex;
-    align-items: center;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
 }
 
 .proj-btn:hover {
     background: none;
     transform: scale(1.2);
-}
-
-.proj-btn .material-icons {
-    font-size: 18px;
-    opacity: 0.8;
 }
 
 .proj-btn:hover .material-icons {
@@ -544,116 +608,25 @@ body {
     font-size: 16px;
 }
 
-.purple {
-    background: #6c4ab6;
-}
-
-.blue {
-    background: #6ec1c7;
-}
-
-.orange {
-    background: #ff8a5c;
-}
-
-.add-task {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    margin-bottom: 30px;
-    width: 100%;
-}
-
-.add-task select {
-    padding: 8px 16px;
-    border-radius: 14px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    background-color: #f0f0f0;
-    font-weight: 650;
-    font-size: 12px;
-    color: #444;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1em;
-    padding: 2.5rem !important;
-}
-
 .custom-select {
     position: relative;
     width: 180px;
     flex-shrink: 0;
 }
 
-.custom-select, 
-#confirmAddTask {
+.custom-select {
     flex-shrink: 0; 
 }
 
 .add-task input {
     flex: 1;
     height: 40px;
-    padding: 0 15px;
-    border-radius: 12px;
-    background-color: #f0f0f0;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    outline: none;
     font-weight: 500;
 }
 
-.add-task input:focus, 
-.add-task select:focus {
-    background-color: #ffffff;
-    border-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
-    transform: translateY(-2px);
-}
-
-.add-task input:hover,
-.add-task select:hover {
+.add-task select:hover:not(:focus) {
     background-color: #e8e8e8;
     transform: scale(1.02);
-}
-
-#confirmAddTask {
-    padding: 8px 20px;
-    border-radius: 14px;
-    font-weight: 650;
-    font-size: 13px;
-    background: #111;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: all 0.2s ease;
-}
-
-#confirmAddTask:hover {
-    transform: scale(1.05);
-    background: #222;
-}
-
-#confirmAddTask:active {
-    transform: scale(0.95);
-}
-
-.add-task input,
-.select-trigger {
-    padding: 8px 14px;
-    border-radius: 12px;
-    background-color: #f0f0f0;
-    font-weight: 700;
-    font-size: 13px;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    outline: none;
-    height: 40px;
-    box-sizing: border-box;
 }
 
 .select-trigger {
@@ -761,31 +734,6 @@ select {
     background-color: #f5f5f5;
 }
 
-#confirmAddTask {
-    padding: 0 20px;
-    height: 40px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 13px;
-    background: #111;
-    color: white;
-    border: none;
-    cursor: pointer;
-    flex-shrink: 0;
-}
-
-#confirmAddTask:hover {
-    transform: scale(1.05); 
-}
-
-.add-task input {
-    float: 1;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    outline: none;
-}
-
 .add-task button {
     padding: 10px 16px;
     border-radius: 10px;
@@ -825,38 +773,10 @@ select {
     pointer-events: none;
 }
 
-.task-text.completed {
-    text-decoration: line-through;
-    opacity: 0.5;
-}
-
-.edit-btn:hover .material-icons[text="check"] {
-    color: #17974d;
-}
-
 .task-text.expanded {
     white-space: normal;
     overflow: visible;
     text-overflow: unset;
-}
-
-.task-actions {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-    margin-left: 10px;
-}
-
-.edit-btn, .delete-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
 }
 
 .edit-btn .material-icons, 
@@ -1152,12 +1072,23 @@ select {
     border-radius: 8px;
 }
 
+.menu-toggle {
+    display: none;
+    background: #111;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
 .day.selected {
     border: 2px solid #111;
     transform: scale(1.1);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
 
   .app {
     flex-direction: column;
@@ -1191,6 +1122,22 @@ select {
     flex-direction: row !important;
     overflow-x: auto; 
     }
+
+    .menu-toggle {display: block;}
+
+    .sidebar {display: none;}
+
+    .rightbar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        z-index: 2000;
+        transition: 0.4s;
+        height: 100vh;
+        width: 300px;
+    }
+
+    .rightbar.active {left: 0;}
 }
 
 @media (max-width: 600px) {
